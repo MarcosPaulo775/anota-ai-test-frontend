@@ -1,0 +1,35 @@
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 60px;
+  background-color: white;
+  box-shadow: 0 0 1em #d2d2d2;
+  /* font-weight: 600; */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  
+}
+
+.toolbar .logo img{
+  height: 48px;
+
+  margin-left: 5px;
+}
+
+.toolbar .title-column{
+  display: flex; flex-direction: column;
+}
+
+.toolbar .title-column .title{
+  font-size: 18px;
+}
+
+.toolbar .title-column .sub-title{
+  font-size: 15px;
+  font-style: italic;
+  color: gray;
+}
