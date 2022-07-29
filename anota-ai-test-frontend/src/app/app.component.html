@@ -1,1 +1,23 @@
 <app-toolbar></app-toolbar>
+
+<app-search-input></app-search-input>
+
+<div
+  style="
+    display: flex;
+    gap: 10px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 35px;
+  "
+>
+  <ng-container *ngFor="let item of list">
+    <div style="position: relative">
+      <app-card-remove-button
+        (clickEventEmitter)="remove(item.id)"
+      ></app-card-remove-button>
+      <app-card [item]="item"></app-card>
+      <app-card-category [type]="item.type"></app-card-category>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,24 @@
+.category {
+  position: absolute;
+  right: 5px;
+  top: 110px;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  color: white;
+  padding: 0px 5px;
+  border-radius: 2px;
+}
+
+.category.paisagem {
+  background-color: blue;
+}
+
+.category.flor {
+  background-color: red;
+}
+
+.category.pizza {
+  background-color: darkgoldenrod;
+}

@@ -19,4 +19,8 @@ export class AppComponent implements OnInit {
       this.list = data;
     });
   }
+
+  remove(id: number) {
+    console.log(id);
+  }
 }
