@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { debounceTime, distinctUntilChanged } from 'rxjs';
 import { AppService } from './core/app.service';
 import { Item } from './shared/models/item';
 
@@ -20,8 +21,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.appService.getList().subscribe((data) => {
-      this.data = data;
-      this.list = data;
+      this.data = [...data];
+      this.list = [...data];
     });
   }
 
@@ -38,12 +39,14 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   filter() {
-    this.searchInput.valueChanges.subscribe((value) => {
-      if (this.data) {
-        this.list = this.data.filter(
-          (el) => el.title.includes(value) || el.description.includes(value)
-        );
-      }
-    });
+    this.searchInput.valueChanges
+      .pipe(debounceTime(250), distinctUntilChanged())
+      .subscribe((value) => {
+        if (this.data) {
+          this.list = this.data.filter(
+            (el) => el.title.includes(value) || el.description.includes(value)
+          );
+        }
+      });
   }
 }
