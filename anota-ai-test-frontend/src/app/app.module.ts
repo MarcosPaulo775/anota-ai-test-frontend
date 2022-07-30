@@ -11,6 +11,7 @@ import { CardComponent } from './components/card/card.component';
 import { CardRemoveButtonComponent } from './components/card-remove-button/card-remove-button.component';
 import { CardCategoryComponent } from './components/card-category/card-category.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,14 @@ import { SearchInputComponent } from './components/search-input/search-input.com
     CardCategoryComponent,
     SearchInputComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, SharedModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    SharedModule,
+  ],
   providers: [AppService],
   bootstrap: [AppComponent],
 })
