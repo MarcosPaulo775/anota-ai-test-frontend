@@ -12,12 +12,14 @@ import { CardRemoveButtonComponent } from './components/card-remove-button/card-
 import { CardCategoryComponent } from './components/card-category/card-category.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CardImgComponent } from './components/card-img/card-img.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     CardComponent,
+    CardImgComponent,
     CardRemoveButtonComponent,
     CardCategoryComponent,
     SearchInputComponent,
