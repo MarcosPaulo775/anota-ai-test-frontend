@@ -1,15 +1,18 @@
-<div class="card">
-  <div class="card-img">
-    <img [src]="item.img" [alt]="item.title" />
-  </div>
+<div class="container">
+  <app-card-remove-button
+    (clickEventEmitter)="remove()"
+  ></app-card-remove-button>
 
-  <div class="card-contents">
-    <div class="card-title">
-      <span>{{ item.title }}</span>
-    </div>
-
-    <div class="card-description">
-      <span>{{ item.description }}</span>
+  <div class="card">
+    <ng-content select="[category]"></ng-content>
+    <ng-content select="[img]"></ng-content>
+    <div class="card-contents">
+      <div class="card-title">
+        <ng-content select="[title]"></ng-content>
+      </div>
+      <div class="card-description">
+        <ng-content select="[description]"></ng-content>
+      </div>
     </div>
   </div>
 </div>

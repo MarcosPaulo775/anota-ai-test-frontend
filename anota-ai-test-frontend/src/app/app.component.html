@@ -1,4 +1,8 @@
-<app-toolbar></app-toolbar>
+<app-toolbar>
+  <img logo class="logo" src="assets/128x128.png" />
+  <span title> Teste de Desenvolvedor Front-End - Anota AI</span>
+  <span subTitle> ─ Marcos Paulo da Costa Mendes ────</span>
+</app-toolbar>
 
 <app-search-input [searchInput]="searchInput"></app-search-input>
 
@@ -13,11 +17,16 @@
 >
   <ng-container *ngFor="let item of list">
     <div style="position: relative">
-      <app-card-remove-button
-        (clickEventEmitter)="remove(item.id)"
-      ></app-card-remove-button>
-      <app-card [item]="item"></app-card>
-      <app-card-category [type]="item.type"></app-card-category>
+      <app-card [item]="item" (clickEventEmitter)="remove(item.id)">
+        <app-card-category category [type]="item.type"></app-card-category>
+        <app-card-img img [img]="item.img" [title]="item.title"></app-card-img>
+        <!--
+
+          <img photo [src]="item.img" [alt]="item.title" />
+        -->
+        <span title>{{ item.title }}</span>
+        <span description>{{ item.description }}</span>
+      </app-card>
     </div>
   </ng-container>
 </div>

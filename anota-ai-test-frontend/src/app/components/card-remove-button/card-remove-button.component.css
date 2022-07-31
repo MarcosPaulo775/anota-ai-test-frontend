@@ -11,8 +11,24 @@
   border: 0.1px solid rgba(201, 201, 201, 0.8);
 
   background-color: white;
+
+  cursor: pointer;
+  transition: 200ms linear;
+  transition: all 0.3s ease-in-out;
 }
 
 .rounded-button svg {
   color: gray;
+  transition: 200ms linear;
+  transition: all 0.3s ease-in-out;
+}
+
+.rounded-button:hover {
+  transform: scale(130%);
+  border: 1px solid gray;
+}
+
+.rounded-button:hover svg {
+  color: red;
+  transform: rotate(-90deg);
 }
